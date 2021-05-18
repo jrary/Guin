@@ -1,0 +1,1 @@
+SELECT * FROM guindata.user;
