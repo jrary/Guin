@@ -8,7 +8,6 @@ public class Consumer extends Info {
 
     private Producer supporter;          // 나를 도와주는 사람
 
-    // 따로 선호하는 직업 및 지역을 선택하지 않는다면,
     public Consumer(String name, String number, String email, String region, String job) {
         this.name = name;
         this.phoneNumber = number;
