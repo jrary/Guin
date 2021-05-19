@@ -1,6 +1,6 @@
 SELECT * FROM guindata.user;
 CREATE TABLE `guindata`.`user` (
-  `id` VARCHAR(45) NOT NULL,
+  `id` INT NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `address` VARCHAR(45) NOT NULL,
