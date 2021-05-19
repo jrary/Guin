@@ -43,14 +43,27 @@ public class Consumer extends Info {
             System.out.println("Can help you");
             use_cnt += 1;                   // 도움받은 횟수를 1 증가시킨다.
             supporter.running();          // working state 로 만든다.
-
-            /*
-            ****************************************************************
-            해당 직업군을 언제 finish 할지, 어떤 조건을 기준으로 finish 상태로 만들어야 하는지
-            ****************************************************************
-             */
         } else { // 도움받을 수 없는 상황이라면,
             System.out.println("Unavailable to support you");
+        }
+    }
+
+    // 현재 도움 받는 것을 중지한다.
+    public void finish_support(String state) {
+        // 현재, supporter 가 없다면,
+        if (supporter == null) {
+            System.out.println("You don't get any support");
+            return;
+        }
+
+        // supporter 가 있다면,
+        System.out.println("Name: " + supporter.name + " job: " + supporter.job);
+        System.out.println("Successfully helped you");
+
+        if (state.equals("r")) {
+            supporter.ready();
+        } else {
+            supporter.waiting();
         }
     }
 
@@ -85,6 +98,11 @@ public class Consumer extends Info {
                 if (userPreferRegion.equals(producer_info.getRegion())) {
                     // 그리고 그 producer 가 일할 수 있다면, --> 나는 그 사람에게 도움을 받을 수 있는 것이다.
                     if (producer_info.getWorkable()) {
+                        // 그 producer 를 맨 뒤로 보내고(다양한 사람이 도울 수 있도록)
+                        infoArr.add(producer_info);
+                        infoArr.remove(0);
+
+                        // producer 를 반환한다.
                         return producer_info;
                     }
                 }
