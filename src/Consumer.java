@@ -1,5 +1,3 @@
-package com.tp;
-
 import java.util.*;
 
 public class Consumer extends Info {
