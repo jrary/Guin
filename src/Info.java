@@ -8,6 +8,8 @@ public class Info {
     protected String job;
 
     // producer 를 등록하는 map
+    // String type: Job name
+    // ArrayList<Producer>: 해당 직업을 가진 producer 들을 저장하는 list
     protected static HashMap<String, ArrayList<Producer>> producer_map = new HashMap<>();
 
     // consumer 를 등록하는 list
