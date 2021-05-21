@@ -21,21 +21,28 @@ public class Main {
         c1.finish_support("w");        // 도움 다 받고 나서 도와준 사람의 상태를 wait 으로 설정
         System.out.println("\n");      
       
-        // 현재 도울 수 있는 사람은 Kim (Lee 는 wait)
+        // 현재 도울 수 있는 사람은 Kim 한명(Lee 는 wait)
 
 
         // consumer 등록 (c2)
         Consumer c2 = new Consumer("Lim", "01-", "em", "seoul", "t");
         c2.setUserPreferJob("Doctor"); // 의사 원함
         c2.getSupport(producer_map);   // Kim 이 도와줌
+        
+        // 현재 도울 ㅅ 있는 사람은 없음 (Lee 느 wait Kim 은 바쁨)
 
         System.out.println("\n");
 
         p1.ready(); // 다시 p1(Lee) 을 ready 로 바꿈(도움을 줄 수 있는 상태)
+        
+        // 현재 도울 수 있는 사람은 p1(Lee)
+        
         c1.setUserPreferJob("Doctor"); // c1 이 의사를 원함
         c1.getSupport(producer_map);   // Lee 가 도와줌
 
         System.out.println("\n");
+        
+        // 현재 도울 ㅅ 있는 사람은 없음
 
         // Consumer c3 등록
         Consumer c3 = new Consumer("Lim", "01-", "em", "seoul", "t");
