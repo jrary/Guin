@@ -38,7 +38,7 @@ public class Main {
                 System.out.print("직업: ");
                 job = sc.nextLine();
 
-                consumer_list.add(new Consumer(name, number, email, region, job));
+                new Consumer(name, number, email, region, job);
 
                 System.out.println("소비자 등록 완료\n");
             } else if (switchCase == 2) {
