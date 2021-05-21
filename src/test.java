@@ -12,7 +12,6 @@ public class Main {
       
         // producer 2 등록 (의사)
         Producer p2 = new Producer("Kim", "010-0000-0000", "email0.com", "seoul", "Doctor");
-        // 해당 직업을 가진 producer 들을 저장하는 list
 
         // consumer 등록 (c1)
         Consumer c1 = new Consumer("Kim", "010-0000-0000", "email1.com", "seoul", "professor");
