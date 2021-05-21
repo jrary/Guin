@@ -7,14 +7,14 @@ public class Info {
     protected String region;
     protected String job;
 
-    // producer 를 등록하는 map
+    // producer 瑜� �벑濡앺븯�뒗 map
     // String type: Job name
-    // ArrayList<Producer>: 해당 직업을 가진 producer 들을 저장하는 list
+    // ArrayList<Producer>: �빐�떦 吏곸뾽�쓣 媛�吏� producer �뱾�쓣 ���옣�븯�뒗 list
     protected static HashMap<String, ArrayList<Producer>> producer_map = new HashMap<>();
 
-    // consumer 를 등록하는 list
+    // consumer 瑜� �벑濡앺븯�뒗 list
     protected static ArrayList<Consumer> consumer_list = new ArrayList<>();
-
+    
     public String getName() {
         return name;
     }
