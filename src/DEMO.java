@@ -1,14 +1,42 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
 
     static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        // write your code here
+    public static void main(String[] args) throws IOException {
+    	
+    	BufferedReader inputStream1 = null; //for Consumer.dat
+		PrintWriter outputStream1 = null;
+		BufferedReader inputStream2 = null; //for Producer.dat
+		PrintWriter outputStream2 = null;
+
         HashMap<String, ArrayList<Producer>> producer_map = Producer.producer_map;
         ArrayList<Consumer> consumer_list                 = Consumer.consumer_list;
 
+        //set the file data in the ArrayList
+        String l;
+        //Consumer
+        inputStream1 = new BufferedReader(new FileReader("Consumer.dat"));
+        while((l = inputStream1.readLine()) != null) {
+        	String[] arr;
+        	arr=l.split("/");
+        	new Consumer(arr[0], arr[1], arr[2], arr[3], arr[4]);
+		}
+        if(inputStream1 != null)
+			inputStream1.close();
+        //Producer
+        inputStream2 = new BufferedReader(new FileReader("Producer.dat"));
+        while((l = inputStream2.readLine()) != null) {
+        	String[] arr;
+        	arr=l.split("/");
+        	new Producer(arr[0], arr[1], arr[2], arr[3], arr[4]);
+		}
+        if(inputStream2 != null)
+			inputStream2.close();
+        
+        
         while (true) {
             System.out.println("----------------Guin----------------");
             System.out.println("1. 소비자 등록");
@@ -39,8 +67,12 @@ public class Main {
                 job = sc.nextLine();
 
                 new Consumer(name, number, email, region, job);
-
+                outputStream1 = new PrintWriter(new FileWriter("Consumer.dat", true));
+                outputStream1.println(name+"/"+number+"/"+email+"/"+region+"/"+job);
                 System.out.println("소비자 등록 완료\n");
+                if(outputStream1 != null)
+        			outputStream1.close();
+                
             } else if (switchCase == 2) {
                 String name, number, email, region, job;
                 System.out.print("이름: ");
@@ -59,8 +91,12 @@ public class Main {
                 job = sc.nextLine();
 
                 new Producer(name, number, email, region, job);
-
+                outputStream2 = new PrintWriter(new FileWriter("Producer.dat", true));
+                outputStream2.println(name+"/"+number+"/"+email+"/"+region+"/"+job);
                 System.out.println("생산자 등록 완료\n");
+                if(outputStream2 != null)
+        			outputStream2.close();
+                
             } else if (switchCase == 3) {
                 boolean is_registered = false;
 
@@ -119,22 +155,16 @@ public class Main {
                         }
                     }
                 }
-
                 // 만약, consumer list 에서 찾지 못했다면,
                 if (!is_registered) {
                     System.out.println("등록되지 않은 사용자입니다. ");
                     System.out.println("등록부터 하세요");
                 }
-
-
             } else if (switchCase == 4) {
                 break;
             } else {
                 System.out.println("잘못된 입력입니다. ");
             }
-
         }
-
-
     }
 }

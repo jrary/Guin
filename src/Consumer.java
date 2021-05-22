@@ -38,7 +38,8 @@ public class Consumer extends Info {
         supporter = getSupporter(map); // 내의 supporter 를 제공받는다. 없으면 null 반환
         // 도움받을 수 있는 상황이라면, 즉 supporter 가 존재한다면,
         if (supporter != null) {
-            System.out.println("Name: " + supporter.name + " job: " + supporter.job);
+            System.out.println("Name: " + supporter.name + ". job: " + supporter.job);
+            System.out.println("Phone: " + supporter.phoneNumber +". e-mail: " + supporter.email);
             System.out.println("Can help you");
             use_cnt += 1;                   // 도움받은 횟수를 1 증가시킨다.
             supporter.running();          // working state 로 만든다.
