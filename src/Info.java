@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class Info {
+    protected String ID; // 수정
+    protected String PW; // 수정
     protected String name;
     protected String phoneNumber;
     protected String email;
@@ -30,7 +32,14 @@ public class Info {
     public String getJob() {
         return job;
     }
-
+    // 수정
+    public String getID() {
+        return ID;
+    }
+    // 수정
+    public String getPW() {
+        return PW;
+    }
     public ArrayList<Consumer> getConsumer_list() {
         return consumer_list;
     }
