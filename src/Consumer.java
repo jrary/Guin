@@ -8,7 +8,9 @@ public class Consumer extends Info {
 
     private Producer supporter;          // 나를 도와주는 사람
 
-    public Consumer(String name, String number, String email, String region, String job) {
+    public Consumer(String ID, String PW, String name, String number, String email, String region, String job) {
+        this.ID = ID;
+        this.PW = PW;
         this.name = name;
         this.phoneNumber = number;
         this.email = email;
