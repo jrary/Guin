@@ -17,9 +17,9 @@ public class register extends JFrame {
 	public register() {
 		JPanel p = new JPanel();
 		
-		Label l1 = new Label("이름");
-		Label l2 = new Label("ID");
-		Label l3 = new Label("Password");
+		Label l1 = new Label("ID");
+		Label l2 = new Label("Password");
+		Label l3 = new Label("이름");
 		Label l4 = new Label("e-mail");
 		Label l5 = new Label("phone number");
 		Label l6 = new Label("address");
@@ -32,9 +32,9 @@ public class register extends JFrame {
 		add(l6);
 		add(l7);
 		
-		TextField t1 = new TextField(); // name
-		TextField t2 = new TextField(); // Id
-		TextField t3 = new TextField(); // pw
+		TextField t1 = new TextField(); // ID
+		TextField t2 = new TextField(); // pw
+		TextField t3 = new TextField(); // 이름
 		TextField t4 = new TextField(); // email
 		TextField t5 = new TextField(); // phone
 		TextField t6 = new TextField(); // address
@@ -42,7 +42,7 @@ public class register extends JFrame {
 		add(t1);
 		add(t2);
 		add(t3);
-		t3.setEchoChar('*'); // pw 암호화
+		t2.setEchoChar('*'); // pw 암호화
 		add(t4);
 		add(t5);
 		add(t6);
@@ -86,13 +86,13 @@ public class register extends JFrame {
 					
 					outputStream1 = new PrintWriter(new FileWriter("Consumer.dat", true));
 					
-					outputStream1.write(t1.getText()+"/"); // name
-					outputStream1.write(t2.getText()+"/"); // id
-					outputStream1.write(t3.getText()+"/"); // pw
+					outputStream1.write(t1.getText()+"/"); // id
+					outputStream1.write(t2.getText()+"/"); // pw
+					outputStream1.write(t3.getText()+"/"); // name
 					outputStream1.write(t4.getText()+"/"); // email
 					outputStream1.write(t5.getText()+"/"); // phone
 					outputStream1.write(t6.getText()+"/"); // address
-					outputStream1.write(t7.getText()+"/"); // job
+					outputStream1.write(t7.getText()+"\r\n"); // job
 					outputStream1.close();
 					
 					JOptionPane.showMessageDialog(null, "consumer 회원가입을 축하합니다 ! ");
