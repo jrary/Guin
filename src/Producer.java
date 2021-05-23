@@ -4,7 +4,9 @@ public class Producer extends Info {
     private boolean amIWorking; // 내가 현재 일하고 있는지 확인하는 변수
     private boolean workable;   // 일할 수 있는지를 판단하는 변수
 
-    public Producer(String name, String number, String email, String region, String job) {
+    public Producer(String ID, String PW, String name, String number, String email, String region, String job) {
+        this.Id = ID;
+        this.PW = PW;
         this.name = name;
         this.phoneNumber = number;
         this.email = email;
