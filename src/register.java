@@ -1,3 +1,6 @@
+/*
+수정할 부분 : 전체적인 UI (text 크기 맞추기)
+*/
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
