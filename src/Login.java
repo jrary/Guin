@@ -1,3 +1,10 @@
+/*
+수정할 부분 1 : Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at Login$1.actionPerformed(Login.java:101)
+수정할 부분 2 : Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at Login$2.actionPerformed(Login.java:135)
+수정할 부분 3 : 전체적인 UI 틀 맞추기
+*/
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
