@@ -1,8 +1,4 @@
 /*
-수정할 부분 1 : Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
-	at Login$1.actionPerformed(Login.java:101)
-수정할 부분 2 : Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
-	at Login$2.actionPerformed(Login.java:135)
 수정할 부분 3 : 전체적인 UI 틀 맞추기
 */
 import java.awt.*;
@@ -23,7 +19,7 @@ public class Login extends JFrame{
 		JPanel p = new JPanel();
 		p.setLayout(null);
 		
-		JLabel label = new JLabel(new ImageIcon("D:\\학교\\2021년 3학년 1학기\\객체지향프로그래밍"));
+		JLabel label = new JLabel(new ImageIcon("D:\\학교\\2021년 3학년 1학기\\객체지향프로그래밍\\GUIN"));
 		add(label);
 		
 		Label t1 = new Label("GUIN - 구인구직 프로그램");
@@ -83,7 +79,8 @@ public class Login extends JFrame{
 				 try {
 					BufferedReader inputStream1 = null; //for Consumer.dat					
 					ArrayList<Consumer> consumer_list= Consumer.consumer_list;
-
+					
+					int check = 0;
 					//set the file data in the ArrayList
 				    String l;
 				    //Consumer
@@ -98,17 +95,22 @@ public class Login extends JFrame{
 				       	// [4] : email
 				       	// [5] : region
 				       	// [6] : job
-				       	new Consumer(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
-				       	
-				       	if(b3.getText().equals(arr[0])&&b4.getText().equals(arr[1])) {
+				       	// new Consumer(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
+				       	if(b3.getText().equals(arr[0]) && b4.getText().equals(arr[1])) {
+				       		new Consumer(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
 				       		JOptionPane.showMessageDialog(null, "로그인이 되었습니다!");
 				       		// consumer UI 나오도록 설정 ex3 f3 = new ex3();
+				       		check++;
+				       		break;
 				       	}
 				       	else {
-				       		JOptionPane.showMessageDialog(null, "로그인에 실패하였습니다!");
+				       		continue;
 				       	}
 				    }
 				   	inputStream1.close();
+				   	if (check != 1) {
+			       		JOptionPane.showMessageDialog(null, "로그인에 실패했습니다!");
+				   	}
 				   	dispose();
 				 }catch (IOException E10) {
 					 E10.printStackTrace();
@@ -124,7 +126,8 @@ public class Login extends JFrame{
 					BufferedReader inputStream2 = null; //for Producer.dat
 					
 			        HashMap<String, ArrayList<Producer>> producer_map = Producer.producer_map;
-
+			        
+			        int check = 0;
 					//set the file data in the ArrayList
 				    String l;
 			        //Producer
@@ -135,13 +138,19 @@ public class Login extends JFrame{
 			        	new Producer(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
 			        	if (b3.getText().equals(arr[0])&&b4.getText().equals(arr[1])) {
 				       		JOptionPane.showMessageDialog(null, "로그인이 되었습니다!");
+				       		check++;
 				       		// producer UI 나오도록 설정
+				       		break;
 			        	}
 			        	else {
-			        		JOptionPane.showMessageDialog(null, "로그인에 실패하였습니다!");
+			        		continue;
 			        	}
 					}
 			     	inputStream2.close();
+			     	if (check != 1) {
+			       		JOptionPane.showMessageDialog(null, "로그인에 실패했습니다!");
+			     	}
+			     	dispose();
 				 }catch (IOException E10) {
 					 E10.printStackTrace();
 				 }
