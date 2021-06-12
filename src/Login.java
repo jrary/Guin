@@ -19,7 +19,7 @@ public class Login extends JFrame{
 		JPanel p = new JPanel();
 		p.setLayout(null);
 		
-		JLabel label = new JLabel(new ImageIcon("D:\\학교\\2021년 3학년 1학기\\객체지향프로그래밍\\GUIN"));
+		JLabel label = new JLabel(new ImageIcon("D:\\학교\\2021년\\객체지향프로그래밍\\GUIN"));
 		add(label);
 		
 		Label t1 = new Label("GUIN - 구인구직 프로그램");

@@ -5,7 +5,7 @@ public class Producer extends Info {
     private boolean workable;   // 일할 수 있는지를 판단하는 변수
 
     public Producer(String ID, String PW, String name, String number, String email, String region, String job) {
-        this.Id = ID;
+        this.ID = ID;
         this.PW = PW;
         this.name = name;
         this.phoneNumber = number;
