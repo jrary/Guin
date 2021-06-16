@@ -8,6 +8,9 @@ import java.io.IOException;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 // 소비자가 원하는 producer 를 선택!
 public class main2Activity extends JFrame{
@@ -24,8 +27,8 @@ public class main2Activity extends JFrame{
 			inputStream = new BufferedReader(new FileReader("Producer.dat"));
 
 			String l;
+			data = new String[100][4];
 			while ((l = inputStream.readLine()) != null) {
-				data = new String[100][4];
 				String[] producer;
 				producer = l.split("/");
 				data[count][0] = producer[2]; // 이름
@@ -49,6 +52,20 @@ public class main2Activity extends JFrame{
 		table = new JTable(producerData, title);
 		scroll = new JScrollPane(table);
 		add(scroll);
+		
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int row = table.getSelectedRow();
+				int col = table.getSelectedColumn();
+				if (col != 0) {
+					JOptionPane.showMessageDialog(null, "이름을 선택하면 구인구직 완료!");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, producerData[row][col] + " 선택되었습니다!");
+				}
+			}
+		});
 		
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
