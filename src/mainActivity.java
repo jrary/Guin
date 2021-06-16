@@ -26,9 +26,9 @@ public class mainActivity extends JFrame {
 		add(l1);
 		add(l2);
 		add(l3);
-		l1.setBounds(10, 5, 100, 10);
-		l2.setBounds(30, 5, 100, 10);
-		l3.setBounds(50, 5, 100, 10);
+		l1.setBounds(10, 10, 100, 10);
+		l2.setBounds(110, 10, 100, 10);
+		l3.setBounds(210, 10, 100, 10);
 		
 		draw1 = new JLabel("법조인"); // 직업 아이콘 법조인
 		draw2 = new JLabel("의사"); // 직업 아이콘 의사
@@ -44,23 +44,38 @@ public class mainActivity extends JFrame {
 		add(draw5);
 		add(draw6);
 		add(draw7);
-		draw1.setBounds(10, 250, 220, 10);
-		draw2.setBounds(240, 250, 220, 10);
-		draw3.setBounds(470, 250, 220, 10);
-		draw4.setBounds(10, 490, 220, 10);
-		draw5.setBounds(240, 490, 220, 10);
-		draw6.setBounds(470, 490, 220, 10);
-		draw7.setBounds(10, 720, 220, 10);
+		draw1.setBounds(10, 190, 150, 10);
+		draw2.setBounds(240, 190, 150, 10);
+		draw3.setBounds(470, 190, 150, 10);
+		draw4.setBounds(10, 420, 150, 10);
+		draw5.setBounds(240, 420, 150, 10);
+		draw6.setBounds(470, 420, 150, 10);
+		draw7.setBounds(10, 650, 150, 10);
 		
 		
+		ImageIcon imgLegal = new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/auction.png");
+		ImageIcon imgDoctor = new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/doctor.png");
+		ImageIcon imgPolice = new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/police.png");
+		ImageIcon imgTraffic = new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/traffic.png");
+		ImageIcon imgWorker = new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/worker.png");
+		ImageIcon imgTeacher = new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/teahcer.png");
+		ImageIcon imgEtc = new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/etc.png");
+		imgLegal = imageSetSize(imgLegal,150,150);
+		imgDoctor = imageSetSize(imgDoctor,150,150);
+		imgPolice = imageSetSize(imgPolice,150,150);
+		imgTraffic = imageSetSize(imgTraffic,150,150);
+		imgWorker = imageSetSize(imgWorker,150,150);
+		imgTeacher = imageSetSize(imgTeacher,150,150);
+		imgEtc = imageSetSize(imgEtc,150,150);
+
+		legalProfession = new JButton(imgLegal);
+		Doctor = new JButton(imgDoctor);
+		Police = new JButton(imgPolice);
+		Traffic = new JButton(imgTraffic);
+		Worker = new JButton(imgWorker);
+		Teacher = new JButton(imgTeacher);
+		etc = new JButton(imgEtc);
 		
-		legalProfession = new JButton(new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/auction.png"));
-		Doctor = new JButton(new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/doctor.png"));
-		Police = new JButton(new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/etc.png"));
-		Traffic = new JButton(new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/police.png"));
-		Worker = new JButton(new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/teaher.png"));
-		Teacher = new JButton(new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/traffic.png"));
-		etc = new JButton(new ImageIcon("C:/Users/Gihyun/eclipse-workspace/GUIN_termproject/worker.png"));
 		add(legalProfession);
 		add(Doctor);
 		add(Police);
@@ -68,13 +83,13 @@ public class mainActivity extends JFrame {
 		add(Worker);
 		add(Teacher);
 		add(etc);
-		legalProfession.setBounds(10, 30, 220, 220);
-		Doctor.setBounds(240, 30, 220, 220);
-		Police.setBounds(470, 30, 220, 220);
-		Traffic.setBounds(10, 260, 220, 220);
-		Worker.setBounds(240, 260, 220, 220);
-		Teacher.setBounds(470, 260, 220, 220);
-		etc.setBounds(10, 490, 220, 220);
+		legalProfession.setBounds(10, 30, 150, 150);
+		Doctor.setBounds(240, 30, 150, 150);
+		Police.setBounds(470, 30, 150, 150);
+		Traffic.setBounds(10, 260, 150, 150);
+		Worker.setBounds(240, 260, 150, 150);
+		Teacher.setBounds(470, 260, 150, 150);
+		etc.setBounds(10, 490, 150, 150);
 		
 		
 		this.buttonClick(legalProfession);
@@ -86,10 +101,17 @@ public class mainActivity extends JFrame {
 		this.buttonClick(etc);
 
 		add(p);
-		setSize(1000, 1000);
+		setSize(800, 700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("GUIN - 구인구직 프로그램");
 		setVisible(true);
+	}
+	
+	public ImageIcon imageSetSize(ImageIcon icon, int i, int j) {
+		Image ximg = icon.getImage();
+		Image yimg = ximg.getScaledInstance(i, j, java.awt.Image.SCALE_SMOOTH);
+		ImageIcon xyimg = new ImageIcon(yimg);
+		return xyimg;
 	}
 	
 	public void buttonClick(JButton button) {
@@ -100,4 +122,5 @@ public class mainActivity extends JFrame {
 			} 
 		});
 	}
+	
 }
