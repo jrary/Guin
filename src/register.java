@@ -54,22 +54,22 @@ public class register extends JFrame {
 		add(j1);
 		add(j2);
 		
-		l1.setBounds(40, 10, 40, 40);
-		l2.setBounds(40, 50, 40, 40);
-		l3.setBounds(40, 90, 40, 40);
-		l4.setBounds(40, 130, 40, 40);
-		l5.setBounds(40, 170, 40, 40);
-		l6.setBounds(40, 210, 40, 40);
-		l7.setBounds(40, 250, 40, 40);
-		t1.setBounds(120, 10, 40, 40);
-		t2.setBounds(120, 50, 40, 40);
-		t3.setBounds(120, 90, 40, 40);
-		t4.setBounds(120, 130, 40, 40);
-		t5.setBounds(120, 170, 40, 40);
-		t6.setBounds(120, 210, 40, 40);
-		t7.setBounds(120, 250, 40, 40);
-		j1.setBounds(80, 300, 80, 30);
-		j2.setBounds(120, 300, 80, 30);
+		l1.setBounds(40, 10, 70, 40);
+		l2.setBounds(40, 50, 70, 40);
+		l3.setBounds(40, 90, 70, 40);
+		l4.setBounds(40, 130, 70, 40);
+		l5.setBounds(40, 170, 70, 40);
+		l6.setBounds(40, 210, 70, 40);
+		l7.setBounds(40, 250, 70, 40);
+		t1.setBounds(120, 10, 300, 40);
+		t2.setBounds(120, 50, 300, 40);
+		t3.setBounds(120, 90, 300, 40);
+		t4.setBounds(120, 130, 300, 40);
+		t5.setBounds(120, 170, 300, 40);
+		t6.setBounds(120, 210, 300, 40);
+		t7.setBounds(120, 250, 300, 40);
+		j1.setBounds(120, 300, 140, 30);
+		j2.setBounds(270, 300, 140, 30);
 		
 		add(p);
 		setSize(500,500);
