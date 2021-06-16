@@ -1,3 +1,4 @@
+package GUIN;
 import java.util.*;
 
 public class Producer extends Info {
